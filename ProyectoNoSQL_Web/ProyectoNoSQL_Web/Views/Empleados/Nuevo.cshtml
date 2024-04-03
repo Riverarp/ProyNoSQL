@@ -1,0 +1,68 @@
+﻿@model ProyectoNoSQL_Web.Entidades.Empleado
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:5%">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-3 d-none d-lg-block"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h3 class="h4 text-gray-900 mb-4">Registrar Empleado</h3>
+                                </div>
+
+                                @if (ViewBag.MsjPantalla != null)
+                                {
+                                    <div class="alert alert-warning" role="alert" style="text-align:center">
+                                        @ViewBag.MsjPantalla
+                                    </div>
+                                }
+
+                            <div style="display:flex;align-content:center;justify-content:center">
+                                @using (Html.BeginForm("Nuevo", "Empleados"))
+                                {
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control form-control-user", @placeholder = "Nombre", @required = "true" })
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Apellido, new { @class = "form-control form-control-user", @placeholder = "Apellido", @required = "true" })
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.FechaNacimiento, new { @class = "form-control form-control-user", @placeholder = "Fecha de Nacimiento", @required = "true", @type = "datetime-local" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("Genero")
+                                        @Html.DropDownListFor(m => m.Genero, new SelectList(new[] { new SelectListItem { Text = "Seleccione....", Value = "null" }, new SelectListItem { Text = "Masculino", Value = "Masculino" }, new SelectListItem { Text = " Femenino", Value = "Femenino" } }, "Value", "Text"), new { @class = "form-control" })
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Direccion, new { @class = "form-control form-control-user", @placeholder = "Dirección", @required = "true" })
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Telefono, new { @class = "form-control form-control-user", @placeholder = "Teléfono", @required = "true" })
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control form-control-user", @placeholder = "Email", @required = "true" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.HiddenFor(m => m.FechaInicioEmpleo)
+                                    </div>
+                                    <div class="form-group my-2">
+                                        @Html.TextBoxFor(m => m.Salario, new { @class = "form-control form-control-user", @placeholder = "Salario", @required = "true" })
+                                    </div>
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Procesar">
+                                }
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

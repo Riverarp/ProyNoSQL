@@ -1,0 +1,53 @@
+﻿
+@model List<ProyectoNoSQL_Web.Entidades.Clase>
+@{
+    ViewBag.Title = "index";
+}
+<div class="card shadow m-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Empleados</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="col-sm-12">
+                    <div class="col-sm-12">
+
+
+                        <a class="btn btn-primary btn-user btn-block my-3" href="@Url.Action("Nuevo","Clases")">Nuevo</a>
+                        <table class="table table-bordered dataTable" style="width: 100%;">
+                            <thead>
+                                <tr role="row">
+                                    <th>Nombre de la Clase</th>
+                                    <th>Descripcion</th>
+                                    <th>Horario</th>
+                                    <th>Instructor</th>
+                                    <th>Duracion</th>
+                                    <th>Funciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="odd">
+                                        <td>@item.NombreClase</td>
+                                        <td>@item.Descripcion</td>
+                                        <td>@item.Horario</td>
+                                        <td>@item.Instructor</td>
+                                        <td>@item.Duracion</td>
+                                        <td>
+                                            <a href="@Url.Action("Actualizar","Clases", new { id = @item.Id })"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+                                            <a href="@Url.Action("Eliminar","Clases", new { id = @item.Id })"><i class="fa fa-trash-o fa-2x"></i></a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

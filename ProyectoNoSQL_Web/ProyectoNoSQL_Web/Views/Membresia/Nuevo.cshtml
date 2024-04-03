@@ -1,0 +1,52 @@
+﻿
+@model ProyectoNoSQL_Web.Entidades.Membresia
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:5%">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-3 d-none d-lg-block"></div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h3 class="h4 text-gray-900 mb-4">Registrar Membresias</h3>
+                                </div>
+
+                                @if (ViewBag.MsjPantalla != null)
+                                {
+                                    <div class="alert alert-warning" role="alert" style="text-align:center">
+                                        @ViewBag.MsjPantalla
+                                    </div>
+                                }
+
+                                <div style="display:flex;align-content:center;justify-content:center">
+                                    @using (Html.BeginForm("Nuevo", "Membresia"))
+                                    {
+                                        <div class="form-group my-2">
+                                            @Html.TextBoxFor(m => m.TipoMembresia, new { @class = "form-control form-control-user", @placeholder = "TipoMembresia", @required = "true" })
+                                        </div>
+                                        <div class="form-group my-2">
+                                            @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control form-control-user", @placeholder = "Descripcion", @required = "true" })
+                                        </div>
+                                        <div class="form-group my-2">
+                                            @Html.TextBoxFor(m => m.Precio, new { @class = "form-control form-control-user", @placeholder = " Precio", @required = "true" })
+                                        </div>
+
+                                       
+                                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Procesar">
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

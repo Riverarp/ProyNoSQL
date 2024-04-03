@@ -258,6 +258,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\MaquinaController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
@@ -267,6 +268,17 @@
     <Compile Include="Entidades\Inventario.cs" />
     <Compile Include="Entidades\Maquina.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
+=======
+    <Compile Include="Controllers\ClaseController.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\MembresiaController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Entidades\Clase.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="Entidades\Membresia.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Confirmacion.cs" />
     <Compile Include="Entidades\Cliente.cs" />
@@ -347,6 +359,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Empleado\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />

@@ -1,14 +1,12 @@
-﻿@model List<ProyectoNoSQL_Web.Entidades.Cliente>
+﻿@model  List<ProyectoNoSQL_Web.Entidades.Empleado>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Consultar";
 }
-
 <div class="card shadow m-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Clientes</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Empleados</h6>e
     </div>
-<a href="~/Entidades/Cliente.cs">~/Entidades/Cliente.cs</a>
     <div class="card-body">
         <div class="table-responsive">
             <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -16,7 +14,7 @@
                     <div class="col-sm-12">
 
 
-                        <a class="btn btn-primary btn-user btn-block my-3" href="@Url.Action("Nuevo","Clientes")">Nuevo</a>
+                        <a class="btn btn-primary btn-user btn-block my-3" href="@Url.Action("Nuevo","Empleados")">Nuevo</a>
                         <table class="table table-bordered dataTable" style="width: 100%;">
                             <thead>
                                 <tr role="row">
@@ -28,7 +26,8 @@
                                     <th>Telefono</th>
                                     <th>Email</th>
                                     <th>Fecha Inicio </th>
-                                    <th></th>
+                                    <th>salario</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,11 +41,11 @@
                                         <td>@item.Direccion</td>
                                         <td>@item.Telefono</td>
                                         <td>@item.Email</td>
-                                        <td>@item.FechaInicioMembresia</td>
-                                      
+                                        <td>@item.FechaInicioEmpleo</td>
+                                        <td>@item.Salario</td>
                                         <td>
-                                            <a href="@Url.Action("Actualizar","Clientes", new { id = @item.Id })"><i class="fa fa-pencil-square-o fa-2x"></i></a>
-                                            <a href="@Url.Action("Eliminar","Clientes", new { id = @item.Id })"><i class="fa fa-trash-o fa-2x"></i></a>
+                                            <a href="@Url.Action("Actualizar","Empleados", new { id = @item.Id })"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+                                            <a href="@Url.Action("Eliminar","Empleados", new { id = @item.Id })"><i class="fa fa-trash-o fa-2x"></i></a>
                                         </td>
 
                                     </tr>

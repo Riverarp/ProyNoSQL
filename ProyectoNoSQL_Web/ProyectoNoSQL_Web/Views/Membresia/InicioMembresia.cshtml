@@ -1,0 +1,50 @@
+﻿
+@model  List<ProyectoNoSQL_Web.Entidades.Membresia>
+
+@{
+    ViewBag.Title = "InicioMembresia";
+}
+<div class="card shadow m-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Membresias</h6>e
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                <div class="col-sm-12">
+                    <div class="col-sm-12">
+
+
+                        <a class="btn btn-primary btn-user btn-block my-3" href="@Url.Action("Nuevo","Membresia")">Nuevo</a>
+                        <table class="table table-bordered dataTable" style="width: 100%;">
+                            <thead>
+                                <tr role="row">
+                                    <th>Tipo</th>
+                                    <th>Descrip</th>
+                                    <th>Precio</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="odd">
+                                        <td>@item.TipoMembresia</td>
+                                        <td>@item.Descripcion</td>
+                                        <td>@item.Precio</td>
+                                        <td>
+                                            <a href="@Url.Action("Actualizar","Membresia", new { id = @item.Id })"><i class="fa fa-pencil-square-o fa-2x"></i></a>
+                                            <a href="@Url.Action("Eliminar","Membresia", new { id = @item.Id })"><i class="fa fa-trash-o fa-2x"></i></a>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
